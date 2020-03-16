@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 public class FileUtils {
 	private static final String inputFileValuesSeparator = " ";
 	private static final String outputFileValuesSeparator = ",";
+	public static final int LENGTH_WITH_CLASS = 5;
 
 	protected static double[][] readLearningSetFromFile(String fileName) throws USVInputFileCustomException {
 		// Start with an ArrayList<ArrayList<Double>>
