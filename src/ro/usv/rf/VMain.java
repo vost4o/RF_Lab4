@@ -32,7 +32,7 @@ public class VMain {
 			FileUtils.writeLearningSetToFile("distanceMatrix.out", distanceMatrix);
 
 			for (int i = 0; i < learningSet.length; i++) {
-				if (learningSet[i].length < FileUtils.LENGTH_WITH_CLASS) {
+				if (learningSet[i].length <= FileUtils.LENGTH_WITH_CLASS) {
 					int pos = 0;
 					double minValue = distanceMatrix[i][0];
 					for (int j = 1; j < distanceMatrix[i].length; j++) {
