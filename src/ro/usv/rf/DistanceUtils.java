@@ -12,6 +12,6 @@ public class DistanceUtils {
 		// Get the square root
 		distance = Math.sqrt(distance);
 		
-		return Math.floor(distance * 100) /100;
+		return Math.floor(distance * 100) / 100;
 	}
 }

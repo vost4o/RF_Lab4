@@ -30,25 +30,17 @@ public class VMain {
 			}
 
 			FileUtils.writeLearningSetToFile("distanceMatrix.csv", distanceMatrix);
-
-			for (int i = 0; i < learningSet.length; i++) {
-				if (learningSet[i].length <= FileUtils.LENGTH_WITH_CLASS) {
-					int pos = 0;
-					double minValue = distanceMatrix[i][0];
-					for (int j = 1; j < distanceMatrix[i].length; j++) {
-						if (distanceMatrix[i][j] != 0) {
-							if (distanceMatrix[i][j] < minValue) {
-								minValue = distanceMatrix[i][j];
-								pos = j;
-							}
-						}
-					}
-
-					System.out.println("Nearest Neighbour distance: " + minValue);
-					System.out.println(i + "th Form is in " + (pos + 1) + "'s form class -> "
-							+ learningSet[pos][learningSet[pos].length - 1]);
+			int pos = -1;
+			double minDistance = Integer.MAX_VALUE;
+			for (int i = 0; i < learningSet.length - 1; i++) {
+				if(distanceMatrix[i][4] < minDistance) {
+					minDistance = distanceMatrix[i][4];
+					pos = i;
 				}
 			}
+			System.out.println("Nearest Neighbour distance: " + minDistance);
+			System.out.println( " 4'th Form is in " + (pos + 1) + "'s form class -> "
+					+ learningSet[pos][learningSet[pos].length - 1]);
 
 		}
 	}
