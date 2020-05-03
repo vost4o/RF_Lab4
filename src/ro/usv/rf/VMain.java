@@ -4,9 +4,11 @@ public class VMain {
 	public static void main(String[] args) {
 		double[][] learningSet = null;
 		double[][] distanceMatrix = null;
+		double[][] unknownPattern = null;
 
 		try {
 			learningSet = FileUtils.readLearningSetFromFile("in.txt");
+			unknownPattern = FileUtils.readLearningSetFromFile("dataToFind.txt");
 		} catch (USVInputFileCustomException e) {
 			e.printStackTrace();
 		}
@@ -38,6 +40,7 @@ public class VMain {
 					pos = i;
 				}
 			}
+			
 			System.out.println("Nearest Neighbour distance: " + minDistance);
 			System.out.println( " 4'th Form is in " + (pos + 1) + "'s form class -> "
 					+ learningSet[pos][learningSet[pos].length - 1]);
